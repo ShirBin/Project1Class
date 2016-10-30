@@ -1,5 +1,6 @@
 package edu.towson.cosc455.sbinya1.project1
 
+
 object Compiler {
 
   var currentToken : String = ""
@@ -7,13 +8,33 @@ object Compiler {
 
   val Scanner = new MyLexicalAnalyzer
   val Parser = new MySyntaxAnalyzer
-  val SemanticAnalyzer = new MySyntaxAnalyzer
+  val SemanticAnalyzer = new MySemanticAnalyzer
 
   def main(args: Array[String]): Unit = {
     checkFile(args)
     readFile(args(0))
 
-    Scanner.getNextToken()
+    // Reads file, processes, and creates a string
+    println("File has passed in system: ")
+    print(fileContents)
+    println()
+    println("Processing: " )
+
+    //Lexical Analysis
+    Scanner.start (fileContents)
+
+    while (!Scanner./*somevariableinMyLexicalAnalyzer*/.isEmpty) {
+
+      //Goes to next analyzer if passes
+      Scanner.getNextToken()
+
+      // Goes through MySyntax analyzer
+      Parser.gittex()
+
+      // Maybe add if statements here to write conditions. Saw notes on slack for switch cases and why not to use them.
+
+      // Same applies here if the file follows both lexical and syntax, to go through semantic
+    }
 
   }
 
