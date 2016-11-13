@@ -38,3 +38,4 @@ def myUnion(list1: List[Int], list2: List[Int]): List[Int] =
       else anotherListHead::myUnion(list1,anotherListTail)
   }
 myUnion(List(1,2,3,4),List(2,3,4,5))
+

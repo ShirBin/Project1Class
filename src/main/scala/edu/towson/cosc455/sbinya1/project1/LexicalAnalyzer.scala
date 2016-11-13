@@ -7,9 +7,6 @@ trait LexicalAnalyzer {
 
   def getNextToken(): Unit
 
-  def lookup(): Boolean = {
-    println("this is lookup implementation!")
-  }
 
 }
 

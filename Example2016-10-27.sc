@@ -16,3 +16,15 @@ def convert(aList: List[Boolean]): List[Int] =
     case true => 1
   }
 convert(List(true, true, false, true))
+
+def convertA(aList: List[Int]): List[Boolean] =
+  aList.map{
+    case 0 => false
+    case 1 => true
+  }
+convertA(List(1,1,0,1))
+
+def howManyPassed(aList: List[String]): List[String] =
+  aList.{"A","B","C","D","F"}
+
+}
