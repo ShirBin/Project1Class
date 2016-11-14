@@ -1,14 +1,17 @@
 package edu.towson.cosc455.sbinya1.project1
 
-
+// Shiraz Binyamin COSC455
 object Compiler {
 
   var currentToken : String = ""
+  var fileName: String = ""
   var fileContents : String = ""
+  var closeFile : Boolean = false
+
 
   val Scanner = new MyLexicalAnalyzer
   val Parser = new MySyntaxAnalyzer
-  val SemanticAnalyzer = new MySemanticAnalyzer
+  val Semantic = new MySemanticAnalyzer
 
   def main(args: Array[String]): Unit = {
     checkFile(args)
@@ -20,21 +23,23 @@ object Compiler {
     println()
     println("Processing: " )
 
-    //Lexical Analysis
+    //Scanner/Lexical Analysis
     Scanner.start (fileContents)
 
-    while (!Scanner./*somevariableinMyLexicalAnalyzer*/.isEmpty) {
+    while (Scanner.fileLocation < Scanner.fileSize && !closeFile) {
 
-      //Goes to next analyzer if passes
+      //Goes to next analyzer if passes lexical
       Scanner.getNextToken()
 
       // Goes through MySyntax analyzer
       Parser.gittex()
 
-      // Maybe add if statements here to write conditions. Saw notes on slack for switch cases and why not to use them.
-
-      // Same applies here if the file follows both lexical and syntax, to go through semantic
+      if (currentToken.equalsIgnoreCase(CONSTANTS.DOCE)){
+        closeFile = true;
+      }
+      // Goes to semantic after being cleared with syntax
     }
+    Semantic.semantics()
 
   }
 

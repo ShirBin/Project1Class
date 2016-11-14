@@ -65,7 +65,7 @@ numbersList map(i => i*2)
 
 //returns a new list with each element
 //incremented by 1
-val = aList = List(1,5,2,7)
+val moon = aList = List(1,5,2,7)
 def myFunction(someList: List) : List = someList map(e => e + 1)
 myFunction(aList)
 

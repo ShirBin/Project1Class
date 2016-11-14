@@ -1,9 +1,10 @@
 package edu.towson.cosc455.sbinya1.project1
 
 /**
-  * Created by uriel on 10/11/2016.
+  * Created by Shiraz on 10/11/2016.
   */
 object CONSTANTS {
+  val TOKENS : String = "[]\\!#*()=+"
   val DOCB : String = "\\BEGIN"
   val DOCE : String = "\\END"
   val TITLEB : String = "\\TITLE["
@@ -14,7 +15,7 @@ object CONSTANTS {
   val BOLD : String = "**"
   val ITALICS : String = "*"
   val LISTITEM : String = "+"
-  val NEWLINE : String = "\\"
+  val NEWLINE : String = "\\\\"
   val LINKB : String = "["
   val ADDRESSB : String = "("
   val ADDRESSE : String = ")"
@@ -22,6 +23,6 @@ object CONSTANTS {
   val DEFB : String = "\\DEF["
   val EQSIGN : String = "="
   val USEB : String = "\\USE["
-  val REQTEXT : String = "Any plain text"
-  val TEXT : String = "Any plain text | ε"
+  val REQTEXT : String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,"
+
 }
